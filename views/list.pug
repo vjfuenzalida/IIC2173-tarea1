@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  h1= title
+  p #[em Tarea 1 IIC2173]: Aplicación Express.js para mostrar requests recibidas por un servidor.
+  p Autor: Vicente Fuenzalida Marin.
+
+  if error
+    p Error getting dynamic content.
+
+    ul
+      li #[strong !{error}]
+  else
+    table.table
+      caption Solo se muestran las 10 últimas requests.
+      thead
+        tr
+          th.text-center #
+          th.text-center Server IP
+          th.text-center Client IP
+          th.text-center Received at
+      tbody
+        - count = 1
+        each request in requests
+          tr
+            th.text-center(scope='row')= count
+            td.text-center=request.server_ip
+            td.text-center=request.client_ip
+            td.text-center=request.formatdate
+          - count += 1
+
+    //- ul
+    //- each request in requests
+    //-   li 
+    //-     #{request.summary} 
+
+    //- else
+    //-   li There are no requests.
