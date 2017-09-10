@@ -24,7 +24,7 @@ var captureData = function (request) {
 router.get('/', function (req, res, next) {
   var promise = captureData(req);
   promise
-    .then(doc => res.render('index', {title: "Tarea 1 - Inicio", current: "/"}))
+    .then(doc => res.render('index', {title: "Tarea 1 - Arquitectura de Sistemas de Software", current: "/"}))
     .catch(err => res.render('error', {
       title: 'Tarea 1 - Vicente Fuenzalida',
       error: err

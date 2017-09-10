@@ -11,7 +11,6 @@ var app = express();
 //Set up mongoose connection
 // var dbLocal = "mongodb://127.0.0.1/tarea1";
 var mongoose = require('mongoose');
-console.log(process.env.MONGO_DB);
 mongoose.Promise = global.Promise;
 var mongoDB = process.env.MONGO_DB || "mongodb://127.0.0.1/tarea1";
 
